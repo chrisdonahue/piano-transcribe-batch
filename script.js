@@ -9,7 +9,7 @@ function transcribeFiles(fileList) {
     const outputFp = basename + '.mid';
     
     model.transcribeFromAudioFile(fileList[i]).then((ns) => {
-      console.log('Done (' + ns.notes.length + 'notes)!');
+      console.log('Done! ' + ns.notes.length + ' notes');
       saveAs(new File([mm.sequenceProtoToMidi(ns)], outputFp));
     });
   }
@@ -22,7 +22,8 @@ function initUi() {
     transcribeFiles(fileInput.files);
   });
   
-  document.getElementById('file-catcher').style.display = 'block';
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('loaded').style.display = 'block';
 }
 
 model.initialize().then(() => {

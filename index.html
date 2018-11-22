@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Onsets and Frames JS Batch</title>
+    <title>Batch piano transcription</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.2"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
-    <script src="/script.js" defer></script>
+    <script src="mm.js"></script>
+    <script src="filesaver.min.js"></script>
+    <script src="script.js" defer></script>
   </head>  
   <body>
-    <h1>Transcribe some piano recordings</h1>
+    <h1>Transcribe some piano recordings into MIDI</h1>
     
-    <form id="file-catcher" hidden>
-      <input id="file-input" type="file" multiple/>
-      <button type="submit">
-        Submit
-      </button>
-    </form>
+    <div id="loading">
+      <p>Loading...</p>
+    </div>
+    <div id="loaded" hidden>
+      <p>Choose some audio files. They will be transcribed (slowly) and MIDI files will be downloaded.</p>
+      <p>See JavaScript console for more info.</p>
+      <form>
+        <input id="file-input" type="file" multiple/>
+      </form>
+    </div>
   </body>
 </html>
