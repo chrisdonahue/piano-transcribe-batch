@@ -15,14 +15,16 @@
     <script src="script.js" defer></script>
   </head>  
   <body>
-    <h1>Transcribe some piano recordings into MIDI</h1>
+    <h1>Transcribe one or more piano recordings into MIDI</h1>
     
     <div id="loading">
       <p>Loading...</p>
     </div>
     <div id="loaded" hidden>
-      <p>Choose some audio files. They will be transcribed (slowly) and MIDI files will be downloaded.</p>
+      <p>Choose one or more audio files. They will be transcribed (slowly, browser may hang) and MIDI files will be downloaded.</p>
+      <p>Uses the <i><a href="https://magenta.tensorflow.org/onsets-frames">Onsets and Frames</a></i> model (Fjord et al. 2017) from <a href="https://github.com/tensorflow/magenta-js">Magenta JS</a>.</p>
       <p>See JavaScript console for more info.</p>
+      <p><a href="https://piano-scribe.glitch.me">Click here</a> for a friendlier transcription interface without batch mode.</p>
       <form>
         <input id="file-input" type="file" multiple/>
       </form>
